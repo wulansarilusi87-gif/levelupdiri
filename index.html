@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level Up Diri</title>
+
+  <!-- SCSS harus dikompilasi menjadi CSS terlebih dahulu -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">⚡ LevelUp</div>
+
+    <button class="theme-btn" id="themeBtn">
+      🌙
+    </button>
+  </header>
+
+  <main class="container">
+
+    <!-- PROFILE -->
+    <section class="profile-card">
+      <div class="profile-info">
+        <div class="avatar">🚀</div>
+
+        <div>
+          <p class="small-text">Halo, pejuang!</p>
+          <h1 id="username">Wulan</h1>
+          <span class="level-badge">
+            Level <span id="level">1</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="xp-area">
+        <div class="xp-text">
+          <span>XP</span>
+          <strong>
+            <span id="xp">0</span> /
+            <span id="nextXp">100</span>
+          </strong>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar" id="xpBar"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- STATISTIK -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <span>🔥</span>
+        <div>
+          <small>Streak</small>
+          <strong id="streak">0 hari</strong>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span>⭐</span>
+        <div>
+          <small>XP Hari Ini</small>
+          <strong id="todayXp">0 XP</strong>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span>🏆</span>
+        <div>
+          <small>Quest Selesai</small>
+          <strong id="completedQuest">0</strong>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- QUEST -->
+    <section class="section">
+
+      <div class="section-header">
+        <div>
+          <p class="small-text">Daily Challenge</p>
+          <h2>Quest Hari Ini</h2>
+        </div>
+
+        <button class="add-btn" id="addQuestBtn">
+          + Quest
+        </button>
+      </div>
+
+      <div class="quest-list" id="questList">
+
+        <div class="quest" data-xp="20">
+          <div class="quest-icon">📚</div>
+
+          <div class="quest-content">
+            <h3>Belajar 30 menit</h3>
+            <p>Upgrade kemampuanmu hari ini.</p>
+          </div>
+
+          <div class="quest-right">
+            <span class="quest-xp">+20 XP</span>
+            <button class="complete-btn">Selesai</button>
+          </div>
+        </div>
+
+
+        <div class="quest" data-xp="15">
+          <div class="quest-icon">💧</div>
+
+          <div class="quest-content">
+            <h3>Minum air yang cukup</h3>
+            <p>Jaga energi dan kesehatan tubuh.</p>
+          </div>
+
+          <div class="quest-right">
+            <span class="quest-xp">+15 XP</span>
+            <button class="complete-btn">Selesai</button>
+          </div>
+        </div>
+
+
+        <div class="quest" data-xp="25">
+          <div class="quest-icon">🏃</div>
+
+          <div class="quest-content">
+            <h3>Olahraga</h3>
+            <p>Luangkan waktu untuk bergerak.</p>
+          </div>
+
+          <div class="quest-right">
+            <span class="quest-xp">+25 XP</span>
+            <button class="complete-btn">Selesai</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LEVEL UP TIPS -->
+    <section class="tips-card">
+
+      <div class="tips-icon">💡</div>
+
+      <div>
+        <h2>Tips Level Up</h2>
+        <p>
+          Fokus pada progres kecil setiap hari.
+          Konsistensi lebih penting daripada kesempurnaan.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- MODAL -->
+  <div class="modal" id="questModal">
+
+    <div class="modal-content">
+
+      <button class="close-btn" id="closeModal">
+        ×
+      </button>
+
+      <h2>Tambah Quest</h2>
+
+      <form id="questForm">
+
+        <label>
+          Nama Quest
+          <input
+            type="text"
+            id="questName"
+            placeholder="Contoh: Membaca buku"
+            required
+          >
+        </label>
+
+        <label>
+          XP
+          <input
+            type="number"
+            id="questXp"
+            value="20"
+            min="1"
+            max="100"
+            required
+          >
+        </label>
+
+        <button type="submit" class="primary-btn">
+          Tambahkan Quest
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <div class="toast" id="toast">
+    +20 XP 🎉
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
